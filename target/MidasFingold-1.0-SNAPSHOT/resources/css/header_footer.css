@@ -1,0 +1,261 @@
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --vermelho: #6B0000;
+    --dourado: #B78E10;
+    --branco: #fff;
+    --bege: #F1EBD5;
+}
+
+/* começo header */
+.cabeçalho{
+    background-color: var(--vermelho);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    padding: 2px 10px;
+}
+
+.navbar-toggler{
+    border: none;
+    margin-left: 0;
+}
+
+.esquerda, .direita{
+    display: flex;
+    flex-direction: row;
+}
+
+.icones, .icones2, .icones3{
+    color: var(--dourado);
+    font-size: 1.8rem;
+    transition: all 0.4s;
+}
+
+.icones3{
+    display: flex;
+    align-items: center;
+}
+
+.icones:hover, .icones2:hover, .icones3:hover{
+    color: var(--bege);
+    font-size: 2rem;
+}
+
+/* começo offcanvas */
+.offcanvas-header, .offcanvas-body{
+    background-color: var(--bege);
+    color: var(--vermelho);
+    font-size: 1.5rem;
+}
+
+.fechar{
+    background-color: var(--branco);
+    font-size: 1rem;
+    border-radius: 20px;
+}
+
+.nav-link{
+    color: var(--vermelho);
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    transition: all 0.2s;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.nav-item:hover, .nav-link:hover{
+    color:var(--dourado);
+    font-size: 1.3rem;
+}
+
+.linha-horizontal {
+    height: 0.1rem;
+    background-color: var(--vermelho);
+}
+
+.dropdown-menu{
+    background-color: transparent; 
+    border: none;
+}
+
+.dropdown-item{
+    color: var(--vermelho);
+    font-size: 1rem;
+}
+
+.dropdown-item:hover{
+    background-color: transparent;
+    color: var(--dourado);
+    font-size: 1.2rem;
+}
+/* fim offcanvas */
+
+/* header responsivo */
+
+.perfil, .calendario, .notificacoes{
+    display: none;
+}
+
+@media(max-width: 780px){
+    .icones, .icones3{
+        display:none
+    }
+    .perfil, .calendario{
+        display: flex;
+    }
+}
+
+@media(max-width: 510px){
+    .icones2{
+        display: none;
+    }
+    .notificacoes{
+        display: flex;
+    }
+}
+
+/* fim header responsivo */
+
+/* fim header */
+
+/* começo footer */
+.footer {
+    color: var(--vermelho);
+    height: 38px;
+    bottom: 0;   
+}
+
+.container_footer {
+    background-color: var(--dourado);
+    padding: 1rem 2.5rem;
+}
+
+/* redes sociais ícones */
+.redes_sociais {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.redes_sociais .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: var(--vermelho);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+.redes_sociais .footer-link i {
+    font-size: 1.25rem;    
+}
+
+.redes_sociais .footer-link:hover {
+    opacity: 0.8;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#whatsapp {
+    background-color: #25d366;
+}
+
+/* fim redes sociais ícones */
+
+/* listas */
+.footer-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footer-link {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-lista h3, .footer_cadastro h3{
+    font-size: 1.5rem;
+}
+
+.footer-lista .footer-link {
+    color:var(--vermelho);
+    transition: all 0.4s;
+}
+
+.footer-lista .footer-link:hover {
+    color: var(--branco);
+}
+/* fim listas */
+
+/* se cadastre */
+.footer_cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.botao2 button{
+	background-color: var(--vermelho);
+    color: var(--dourado);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all 0.2s;
+}
+
+.botao2 button:hover{
+    background-color: transparent;
+    color: var(--vermelho);
+    border: 1px solid var(--vermelho);
+}
+/* fim se cadastre */
+
+.copyright {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--vermelho);
+	color: var(--dourado);
+    font-size: 0.8rem;
+    padding: 1rem;
+    
+}
+
+/* footer responsivo */
+@media(max-width: 575px){
+    .container_footer{
+        text-align: center;
+    }
+
+    .redes_sociais {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+    .footer-lista{
+        text-align: center;
+        margin-bottom: 2rem;
+        margin-right: 25px;
+    }
+    .footer_cadastro{
+        margin-bottom: 2rem;
+    }
+
+}
+/* fim footer responsivo */
+
+/* fim footer */

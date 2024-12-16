@@ -1,0 +1,194 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho: #6B0000;
+    --dourado: #B78E10;
+    --branco: #fff;
+    --bege: #F1EBD5;
+    --bordaInferior: #92919173;
+    --sombra: rgba(107, 106, 106, 0.336); 
+}
+
+body {
+    min-height: 120vh;
+}
+
+/* página de boas-vindas (topo) */
+
+.boas-vindas {
+    margin-top: 180px;
+    width: 90%;
+    min-height: 40vh;
+    background-color: var(--vermelho);
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boas-vindas-textos h1 {
+    font-weight: 500;
+    color: var(--branco);
+    margin: 0 0 15px 30px;
+}
+
+.boas-vindas-textos p {
+    font-weight: 300;
+    color: var(--branco);
+    margin: 40px 0 0 30px;
+}
+
+.boas-vindas-imagem img {
+    margin-right: 30px;
+    border: 7px solid var(--dourado);
+    border-radius: 50%;
+}
+
+.h3-info-cadastro {
+    text-align: center;
+    margin: 100px 0 80px 0;
+    font-weight: 400;
+}
+
+/* campos de preenchimento do cadastro */
+
+.form-control, .form-select {
+    background-color: #d9d9d9;
+    width: 15rem;
+    border-radius: 10px;
+    border-bottom: 1px solid var(--bordaInferior);
+    box-shadow: 0 4px 5px var(--sombra);
+}
+
+.form-select {
+    margin-top: 30px;
+}
+
+.info-cadastro {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 80px;
+}
+
+.botao-editar-informacoes {
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.editar-informacoes:hover {
+    color: var(--vermelho);
+}
+
+.icon-editar-informacoes {
+    margin-left: 6px;
+    color: var(--dourado);
+}
+
+/* modal editar informações */
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-body form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-body .form-control,
+.modal-body .form-select {
+    width: 100%;
+    min-width: 300px;
+}
+
+.botao-modal {
+    background-color: var(--vermelho);
+    color: #fff;
+}
+
+.botao-modal:hover {
+    border: 1px solid var(--vermelho);
+    background-color: transparent;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 300px) {
+    .boas-vindas-textos h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .boas-vindas-textos p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .form-control, .form-select {
+        width: 10rem;
+        padding: 8px;
+    }
+
+    .informacoes {
+        margin: 0 auto;
+    }
+
+    .modal-body .form-control,
+    .modal-body .form-select {
+        width: 100%;
+        min-width: 100px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .boas-vindas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 70vh;
+    }
+
+    .boas-vindas-textos {
+        margin-top: 35px;
+        text-align: center;
+    }
+
+    .boas-vindas-imagem img {
+        margin: 2px 0;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media (max-width: 991px) {
+    body {
+        height: 175vh;
+    }
+    .info-cadastro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-control {
+        margin-bottom: 30px;
+    }
+
+    .form-select {
+        margin: 0 0 30px 0;
+    }
+}

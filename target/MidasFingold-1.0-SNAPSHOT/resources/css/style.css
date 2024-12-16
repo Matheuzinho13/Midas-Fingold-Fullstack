@@ -1,0 +1,224 @@
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; 
+}
+
+:root{
+    --vermelho: #6B0000;
+    --dourado: #B78E10;
+}
+
+/* começo header */
+header{
+    background-color: var(--vermelho);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    padding: 8px 80px;
+    position: fixed;
+    width: 100%;
+    overflow: visible; 
+    z-index: 10;
+    top: 0;
+}
+
+.cabeçalho{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    transition: 0.5s;
+    flex-wrap: wrap;
+}
+
+.logo img{
+    max-width: 12rem;
+}
+
+/* header responsivo */
+@media(max-width: 700px){
+    .logo img{
+        max-width: 8rem;
+    }
+
+    .cadastre{
+        font-size: 1rem;
+    }
+    
+}
+
+@media(max-width: 450px){
+    .cabecalho{
+        justify-items: center;
+        align-items: center;
+    }
+
+    .logo{
+        margin: 0 auto;
+    }
+
+    .nav-list{
+        margin: 0 auto;
+    }
+    .nav-list button{
+        font-size: 0.8rem;
+    }
+    
+}
+
+/* botão - se cadastre */
+.cadastre{
+    background-color: var(--vermelho);
+    border: 2px solid var(--dourado);
+    color: var(--dourado);
+    border-radius: 20px;
+    padding: 10px 18px;
+    font-size: 1.4rem;
+    transition: all 0.4s;
+}
+
+.cadastre:hover{
+    Background-color: var(--dourado);
+    color: var(--vermelho);
+}
+/* fim header */
+
+/* primeiro container */
+.imagemprincipal img{
+    width: 80%;
+    margin-top: 100px;
+}
+
+/* conteúdo da direita - título e subtítulo */
+.conteudodireito{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.textoprincipal h1{
+    font-size: 3rem;
+	color: #6B0000;
+    text-align: center;
+}
+
+.subtitulo{
+    font-size: 1.6rem;
+	text-align: center;
+	color: #3B3A3A;
+    
+}
+
+/* conteúdo da direita - botões */
+.botoes{
+    margin: 30px;
+}
+
+.botoes .botao, .botao2{
+    width: 40%;
+    border: none;
+    padding: 10px 18px;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin: 10px;
+    font-weight: 200%;
+    transition: all 0.2s;
+}
+
+.botao{
+    background-color: var(--vermelho);
+    color:var(--dourado);
+}
+
+.botao2{
+    background-color: var(--dourado);
+    color:var(--vermelho);
+}
+.botoes a{
+    text-decoration: none;
+}
+
+.botao:hover{
+    background-color: #fff;
+    color:var(--vermelho);
+    border: 1px solid var(--vermelho);
+}
+
+.botao2:hover{
+    background-color: #fff;
+    color:var(--dourado);
+    border: 1px solid var(--dourado);
+}
+
+/* fim primeiro container */
+
+/* começo segundo container - explicação sobre o nome */
+.midas{
+    margin-top: 100px;
+    background-color: #E4D1D1;
+    font-size: 1.6rem;
+}
+
+/* lista de explicação */
+.lista ul li{
+    margin: 3rem;
+    list-style-image: url(../Imagens/Icones/lista.png);
+}
+
+/* fim segundo container - explicação sobre o nome */
+
+/* começo terceiro container - funcionalidades */
+
+/* lista de funcionalidades - ícones */
+
+.celular{
+    font-size: 1.4rem;
+}
+
+.lista2 ul li{
+    margin: 60px;
+}
+
+.renda{
+    list-style-image: url(../Imagens/Icones/Renda.png);
+}
+
+.metas{
+    list-style-image: url(../Imagens/Icones/Metas.png);
+}
+
+.analises{
+    list-style-image: url(../Imagens/Icones/Analises.png);
+}
+
+.investimentos{
+    list-style-image: url(../Imagens/Icones/Investimentos.png);
+}
+/* fim terceiro container - funcionalidades */
+
+/* começo footer */
+.footer{
+    background-color: var(--dourado);
+}
+.footer p{
+    color: var(--vermelho);
+    font-weight: 100px;
+}
+
+.footer button{
+    border: 1px solid var(--vermelho);
+    color: var(--vermelho);
+    transition: all 0.4s;
+}
+
+.footer button:hover{
+    background-color: var(--vermelho);
+    color: var(--dourado);
+}
+.final{
+    background-color: var(--vermelho);
+    color: var(--dourado);
+}
+/* fim footer */

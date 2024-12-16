@@ -1,0 +1,71 @@
+:root {
+    --vermelho: #6B0000;
+    --dourado: #B78E10;
+    --branco: #fff;
+    --bege: #F1EBD5;
+}
+
+body {
+    background-image: url("../Imagens/Background Cadastro/background_cadastro.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#basebox {
+    display: flex;
+}
+
+#infocadastro {
+    text-wrap: wrap;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    text-align: center;
+}
+
+#cadastrobox {
+    background-color: white;
+    margin-top: 18vh;
+    margin-bottom: 4vh;
+    margin-left: 4vh;
+}
+
+#linkcontinuar {
+    margin-bottom: 4vh;
+}
+
+#linhalogos {
+    display: flex;
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+#logofingold {
+    width: 70%;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-left: 10%;
+}
+
+#miniaturafingold {
+    width: 70%;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-right: 10%;
+}
+
+@media (max-height:800px) {
+    #basebox {
+        min-height: 1024px;
+    }
+}
+
+#linkcontinuar {
+    color: var(--dourado);
+    text-decoration: none;
+}
+
+.btn-danger {
+    background-color: var(--vermelho); /* Cor de fundo personalizada */
+    border-color: var(--vermelho);     /* Cor da borda personalizada */
+    color: var(--branco);              /* Cor do texto */
+}

@@ -1,0 +1,336 @@
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho: #6B0000;
+    --dourado: #B78E10;
+    --branco: #fff;
+    --bege: #F1EBD5;
+}
+
+/* primeiro container */
+.imagemprincipal img {
+    margin-top: 30px;
+}
+
+/* conteúdo da direita - título e subtítulo */
+.conteudodireito {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.textoprincipal h1 {
+    font-size: 3.5rem;
+    color: var(--vermelho);
+    text-align: end;
+    margin-top: 10%;
+}
+
+/* efeito de digitação em "objetivos" */
+.textoprincipal .digitando {
+    color: var(--dourado);
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3s steps(40, end);
+
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.textoprincipal .digitando::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 1em;
+    background-color: transparent;
+    animation: cursor-hide 0.5s step-start;
+}
+
+@keyframes cursor-hide {
+
+    from,
+    to {
+        width: 0;
+    }
+
+    50% {
+        width: 1em;
+    }
+}
+
+/* fim efeito de digitação em "objetivos" */
+
+.subtitulo {
+    font-size: 1.4rem;
+    text-align: end;
+    color: #3B3A3A;
+}
+
+/* primeiro container responsivo */
+
+@media (max-width: 1000px) {
+
+    .textoprincipal h1,
+    .subtitulo {
+        text-align: center;
+    }
+
+    .textoprincipal h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitulo {
+        font-size: 1.5rem;
+    }
+
+    .imagemprincipal img {
+        margin-top: 0;
+    }
+}
+
+/* fim primeiro container */
+
+.progress {
+    height: 3rem;
+    margin-top: 6rem;
+    background-color: #D9D9D9;
+}
+
+.progress-bar {
+    background-color: var(--dourado);
+}
+
+.porcentagemObj {
+    font-size: 2rem;
+    color: var(--dourado);
+    text-align: center;
+    margin-top: 1.4rem;
+    margin-bottom: 6rem;
+}
+
+/* botão - adicionar objetivo */
+.adicionar {
+    background-color: var(--dourado);
+    color: var(--bege);
+    transition: all 0.2s;
+    margin: 6rem auto;
+    font-size: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 4px #727171;
+}
+
+svg {
+    width: 25%;
+}
+
+svg path {
+    fill: var(--bege);
+    transition: all 0.2s;
+}
+
+.adicionar:hover svg path {
+    fill: var(--dourado);
+}
+
+.adicionar:hover {
+    background-color: transparent;
+    border: 1px solid var(--dourado);
+    color: var(--dourado);
+}
+
+/* fim botão - adicionar objetivo */
+
+/* modal - adicionar objetivo */
+.modal-content {
+    box-shadow: 1px 0.5px 4px var(--dourado);
+}
+
+.modal-header,
+.modal-footer {
+    background-color: var(--bege);
+}
+
+.modal-title {
+    color: var(--dourado);
+    font-size: 1.7rem;
+}
+
+.linha-modal {
+    height: 0.1rem;
+    background-color: var(--dourado);
+}
+
+/* botões de salvar e fechar modal */
+.salvar {
+    background-color: var(--dourado);
+    color: var(--bege);
+    transition: all 0.2s;
+}
+
+.salvar:hover {
+    background-color: transparent;
+    border: 1px solid var(--dourado);
+    color: var(--dourado);
+}
+
+.modal-footer .fechar {
+    background-color: var(--vermelho);
+    color: var(--bege);
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.fechar:hover {
+    background-color: transparent;
+    border: 1px solid var(--vermelho);
+    color: var(--vermelho);
+}
+
+/* fim botões de salvar e fechar modal */
+
+/* fim modal - adicionar objetivo */
+
+/* tabela de objetivos */
+.table {
+    table-layout: fixed;
+}
+
+.colunas {
+    color: var(--vermelho);
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #727171;
+    font-size: 1.5rem;
+}
+
+.table tbody {
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #727171;
+}
+
+.funções {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.editar,
+.excluir {
+    color: var(--vermelho);
+    display: flex;
+    align-items: center;
+}
+
+.editar:hover,
+.excluir:hover {
+    color: var(--dourado);
+}
+
+.linha1 {
+    background-color: #6B0000;
+}
+
+/* Oculta o checkbox nativo */
+.form-check-input {
+    display: none;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.form-check-label {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--vermelho);
+    background-size: cover;
+    cursor: pointer;
+}
+
+/* Quando o checkbox está marcado */
+.form-check-input:checked+.form-check-label {
+    background-image: url('../Imagens/Icones/checkObjetivos.svg');
+    border: 1px solid var(--dourado);
+}
+
+/* tabela responsiva - cada linha se transforma em um card */
+@media (max-width: 768px) {
+    table.table {
+        word-wrap: break-word;
+    }
+
+    .table tbody {
+        box-shadow: none;
+    }
+
+    table.table thead {
+        display: none;
+    }
+
+    table.table tr {
+        margin-bottom: 2rem;
+    }
+
+    table.table td {
+        display: block;
+        background: #DFDFDF;
+        border: none;
+        padding: 10px 5px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        box-shadow: 1px 1px 4px #727171;
+    }
+
+    table.table tbody,
+    table.table tr {
+        display: block;
+    }
+
+    .table tbody tr {
+        overflow: hidden;
+        box-shadow: 1px 1px 4px var(--vermelho);
+    }
+
+    table.table td:before {
+        content: attr(data-label);
+        /* Texto baseado no data-label em cada td */
+        font-size: 0.8rem;
+        color: var(--bege);
+        border-radius: 10px;
+        width: 25%;
+        float: left;
+        padding: 5px 5px;
+        background-color: var(--vermelho);
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+
+    .table tbody tr .funções {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+/* fim tabela responsiva */
+
+/* fim tabela de objetivos */

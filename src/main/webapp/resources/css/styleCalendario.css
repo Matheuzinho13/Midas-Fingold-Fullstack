@@ -1,0 +1,115 @@
+/* Configurações globais */
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho: #6B0000;
+    --dourado: #B78E10;
+    --branco: #fff;
+    --bege: #F1EBD5;
+}
+
+/* Container principal */
+.container-calendario {
+    margin: 160px 100px 100px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Formulário de seleção de ano e mês */
+.container-calendario form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container-calendario label {
+    font-size: 1rem;
+    color: var(--vermelho);
+}
+
+.container-calendario input[type="number"],
+.container-calendario select {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid var(--vermelho);
+    border-radius: 5px;
+}
+
+.container-calendario button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: var(--dourado);
+    color: var(--branco);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-calendario h2 {
+    color: var(--vermelho);
+    margin-bottom: 20px;
+}
+
+/* Estrutura do calendário */
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    background-color: var(--bege);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.dia {
+    background-color: var(--branco);
+    border: 1px solid var(--vermelho);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 150px; /* Altura fixa para uniformidade */
+    overflow-y: auto; /* Barra de rolagem para conteúdo excedente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionado sombra no hover */
+}
+
+.dia:hover {
+    transform: scale(2); /* Aumenta o tamanho da div em 100% */
+    background-color: var(--branco); /* Mantém o fundo branco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor para realçar */
+    border-color: var(--bege)
+}
+
+.dia .data {
+    font-weight: bold;
+    color: var(--vermelho);
+    margin-bottom: 5px;
+}
+
+/* Lista de eventos do dia */
+.eventos {
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.eventos .tipo {
+    font-weight: bold;
+    color: var(--vermelho); /* Ajuste para vermelho suave */
+}
+
+.dia:hover .eventos li,
+.dia:hover .eventos .tipo {
+    font-size: 80%; /* Define o tamanho da fonte apenas quando o mouse está sobre o dia */
+}

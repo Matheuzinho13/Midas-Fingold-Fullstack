@@ -1,0 +1,266 @@
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho: #6B0000;
+    --dourado: #B78E10;
+    --branco: #fff;
+    --bege: #F1EBD5;
+}
+
+/* primeiro container */
+.imagemprincipal img {
+    margin-top: 30px;
+}
+
+/* conteúdo da esquerda - título e subtítulo */
+.conteudoesquerdo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.textoprincipal h1 {
+    font-size: 4rem;
+    color: var(--dourado);
+    text-align: start;
+    margin-top: 10%;
+}
+
+/* efeito de digitação em "gastos" */
+.textoprincipal .digitando {
+    color: var(--vermelho);
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3s steps(40, end);
+
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.textoprincipal .digitando::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 1em;
+    background-color: transparent;
+    animation: cursor-hide 0.5s step-end infinite;
+}
+
+@keyframes cursor-hide {
+
+    from,
+    to {
+        width: 0;
+    }
+
+    50% {
+        width: 1em;
+    }
+}
+/* fim efeito de digitação em "ganhos" */
+
+.subtitulo {
+    font-size: 1.6rem;
+    text-align: start;
+    color: #3B3A3A;
+}
+
+/* primeiro container responsivo */
+
+@media (max-width: 1000px) {
+
+    .textoprincipal h1,
+    .subtitulo {
+        text-align: center;
+    }
+
+    .textoprincipal h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitulo {
+        font-size: 1.5rem;
+    }
+}
+
+/* fim primeiro container */
+
+/* botão - adicionar ganho */
+.adicionar{
+    background-color: var(--vermelho);
+    color: var(--bege);
+    transition: all 0.2s;
+    margin: 7rem auto;
+    font-size: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 1px 4px #727171;
+}
+
+svg{
+    width: 30%;
+}
+
+svg path{
+    fill: var(--bege);
+    transition: all 0.2s;
+}
+
+.adicionar:hover svg path {
+    fill: var(--vermelho);
+}
+
+.adicionar:hover{
+    background-color: transparent;
+    border: 1px solid var(--vermelho);
+    color: var(--vermelho);
+}
+/* fim botão - adicionar ganho */
+
+/* modal - adicionar ganho */
+.modal-content{
+    box-shadow: 1px 0.5px 4px var(--vermelho);
+}
+
+.modal-header, .modal-footer{
+    background-color: var(--bege);
+}
+
+.modal-title{
+    color: var(--vermelho);
+    font-size: 1.7rem;
+}
+
+.linha-modal{
+    height: 0.1rem;
+    background-color: var(--vermelho);
+}
+
+/* botões de salvar e fechar modal */
+.salvar{
+    background-color: var(--dourado);
+    color: var(--bege);
+    transition: all 0.2s;
+}
+
+.salvar:hover{
+    background-color: transparent;
+    border: 1px solid var(--dourado);
+    color: var(--dourado);
+}
+
+.modal-footer .fechar{
+    background-color: var(--vermelho);
+    color: var(--bege);
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.fechar:hover{
+    background-color: transparent;
+    border: 1px solid var(--vermelho);
+    color: var(--vermelho);
+}
+/* fim botões de salvar e fechar modal */
+
+/* fim modal - adicionar ganho */
+
+/* tabela de gastos */
+.table{
+    table-layout: fixed;
+}
+
+.colunas{
+    color: var(--vermelho);
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #727171;
+    font-size: 1.5rem;
+}
+
+.table tbody{
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #727171;
+}
+
+.funções{
+    flex-direction: row;
+}
+
+.editar, .excluir{
+    color: var(--vermelho);
+}
+
+.editar:hover, .excluir:hover{
+    color: var(--dourado);
+}
+
+
+/* tabela responsiva - cada linha se transforma em um card */
+@media (max-width: 768px) {
+    table.table {
+        word-wrap: break-word;
+    }
+
+    .table tbody{
+        box-shadow: none;
+    }
+
+    table.table thead {
+        display: none;
+    }
+
+    table.table tr{
+        margin-bottom: 2rem;
+    }
+    
+    table.table td {
+        display: block;
+        background: #DFDFDF;
+        border: none;
+        padding: 10px 5px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        box-shadow: 1px 1px 4px #727171;
+    }
+
+    table.table tbody,
+    table.table tr {
+        display: block;
+    }
+
+    .table tbody tr {
+        overflow: hidden;
+        box-shadow: 1px 1px 4px var(--vermelho);
+    }
+
+    table.table td:before {
+        content: attr(data-label); /* Texto baseado no data-label em cada td */
+        font-size: 0.8rem;
+        color: var(--bege);
+        border-radius: 10px;
+        width: 25%; 
+        float: left;
+        padding: 5px 5px;
+        background-color: var(--vermelho);
+        font-weight: bold;
+        box-sizing: border-box;      
+    }
+}
+/* fim tabela responsiva */
+
+/* fim tabela de gastos */
